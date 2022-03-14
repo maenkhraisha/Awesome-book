@@ -34,6 +34,13 @@ function appendElements(book){
     elBookContainer.appendChild(elAuthor);
     elBookContainer.appendChild(elRemoveBtn);
     elBookContainer.appendChild(hirozantalLine);
+
+    // === remove item from the list book === //
+    elRemoveBtn.addEventListener('click',()=>{
+        bookListData = bookListData.filter(ele => ele.title != book.title);
+        localStorage.setItem('bookList',JSON.stringify(bookListData)); 
+        window.location.reload();
+    });
 }
 
 // === loop on book list object === //
@@ -53,9 +60,6 @@ elAddBtn.addEventListener('click',()=>{
     bookListData.push({ title: elTitleInput.value, author: elAutorInput.value});
     localStorage.setItem('bookList',JSON.stringify(bookListData)); 
 });
-
-// === remove book from book list === //
-
 
 /* load page */
 window.addEventListener('load', () => {
