@@ -9,21 +9,20 @@
 </head>
 <body>
     <div id="container">
-        <h1 class="title">Awesome Books by Maen and Adrian</h1>
+        <h1 class="title">Awesome Books</h1>
 
         <div class="book-list">
 
         </div>
 
-        <form method="post" class="book-form">
+        <form class="book-form">
+            <label for="title-input"></label>
+            <input type="text" id="title-input" placeholder="Title" class="book-title">
 
-            <label for="title"></label>
-            <input type="text" id="title" placeholder="Title" class="book-title">
+            <label for="author-input"></label>
+            <input type="text" id="author-input" placeholder="Author" class="book-author">
 
-            <label for="author"></label>
-            <input type="text" id="author" placeholder="Author" class="book-author">
-
-            <input type="submit" value="Add">
+            <input type="submit" value="Add" id="add-btn">
 
         </form>
     </div>

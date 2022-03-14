@@ -1,50 +1,60 @@
-let bookListData = [
-    {
-        title:'title 1',
-        autor:'autor 1',
-    },
-    {
-        title:'title 3',
-        autor:'autor 2',
-    }
-];
+let bookListData =[];
 
 // === select the main containter of the book list === //
 const elBookList = document.querySelector('.book-list');
+const elAddBtn = document.getElementById('add-btn');
+const elTitleInput = document.getElementById('title-input');
+const elAutorInput = document.getElementById('author-input');
+
+// === declaration of variables === //
 let elBookContainer;
 let elTitle;
 let elAuthor;
 let elRemoveBtn;
+let hirozantalLine;
 
 // === create elements === //
 function createElements(){
     elBookContainer = document.createElement('div');
     elBookContainer.classList = 'book-container';
-    elTitle = document.createElement('h2');
-    elAuthor = document.createElement('h3');
+    elTitle = document.createElement('p');
+    elAuthor = document.createElement('p');
     elRemoveBtn = document.createElement('button');
     elRemoveBtn.textContent = "remove";    
+    hirozantalLine = document.createElement('hr');
+    hirozantalLine.className = 'rounded';
 }
 
 // === append elements === //
-function appendElements(elm){
+function appendElements(book){
     elBookList.appendChild(elBookContainer);
-        elTitle.innerText = elm.title;
-        elBookContainer.appendChild(elTitle);
-        elAuthor.innerText = elm.autor;
-        elBookContainer.appendChild(elAuthor);
-        elBookContainer.appendChild(elRemoveBtn);
+    elTitle.innerText = book.title;
+    elBookContainer.appendChild(elTitle);
+    elAuthor.innerText = book.author;
+    elBookContainer.appendChild(elAuthor);
+    elBookContainer.appendChild(elRemoveBtn);
+    elBookContainer.appendChild(hirozantalLine);
 }
 
 // === loop on book list object === //
 function createBookList(){
-    bookListData.forEach((elm) => {
-        createElements();
-        appendElements(elm);        
-    });
-    
+    if( localStorage.getItem('bookList') != null){
+        bookListData = JSON.parse(localStorage.getItem('bookList'));
+        
+        bookListData.forEach(book => {
+            createElements();
+            appendElements(book);       
+        });
+    }
 }
-// bookListData.push({ title: title.value, author: author.value });
+
+// === add book to book list array and localstorage === //
+elAddBtn.addEventListener('click',()=>{
+    bookListData.push({ title: elTitleInput.value, author: elAutorInput.value});
+    localStorage.setItem('bookList',JSON.stringify(bookListData)); 
+});
+
+// === remove book from book list === //
 
 
 /* load page */
