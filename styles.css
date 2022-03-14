@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@101.5,399&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  margin: 2%;
+  padding: 2%;
+  border: 2px solid lightblue;
+  width: auto;
+  border-radius: 9px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 24px;
+}
+
+.book-form {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  border: 0.5px solid lightslategray;
+  padding: 2%;
+  gap: 0.5rem;
+}
+
+.book-form input {
+  border: 0.5px solid lightblue;
+  border-radius: 4px;
+}
+
+hr.rounded {
+  border-top: 3px solid #bbb;
+  border-radius: 2px;
+}
