@@ -8,7 +8,6 @@ body {
 
 #container {
   margin: 2%;
-  margin: 2%;
   padding: 2%;
   border: 2px solid lightblue;
   width: auto;
@@ -25,6 +24,7 @@ body {
   padding: 2%;
   gap: 0.5rem;
 }
+
 .book-form input {
   border: 0.5px solid lightblue;
   border-radius: 4px;
