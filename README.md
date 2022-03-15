@@ -5,7 +5,7 @@
 
 ![screenshot](/images/demo.png)
 
-My challenge was to build a conference website from scratch, using the template from Behance. [Live Demo]()). 😊
+Our challenge was to build a webpage that can store our favourite books using classes, arrays and so on. [Live Demo](). 😊
 
 ### Features implemented:
 * Add and Remove functions
