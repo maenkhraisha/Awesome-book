@@ -7,10 +7,14 @@ body {
 }
 
 #container {
-  margin: 2%;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ width: fit-content;
+  margin: auto;
   padding: 2%;
   border: 2px solid lightblue;
-  width: auto;
   border-radius: 9px;
   font-family: 'Fredoka', sans-serif;
   font-size: 24px;
