@@ -14,7 +14,7 @@ body {
   width: fit-content;
   margin: auto;
   padding: 2%;
-  border: 2px solid lightblue;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 9px;
   font-family: 'Fredoka', sans-serif;
   font-size: 24px;
@@ -22,19 +22,76 @@ body {
 
 .book-form {
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
-  border: 0.5px solid lightslategray;
   padding: 2%;
   gap: 0.5rem;
 }
 
 .book-form input {
-  border: 0.5px solid lightblue;
-  border-radius: 4px;
+  display: flex;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 2px;
+  filter: drop-shadow(3px 2px 0 #000);
+  font-family: 'Fredoka', sans-serif;
+  justify-content: center;
+  margin: auto;
+  width: 66%;
 }
 
-hr.rounded {
-  border-top: 3px solid #bbb;
-  border-radius: 2px;
+.book-container button {
+  background-color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  filter: drop-shadow(3px 2px 0 #000);
+  margin: 1%;
+  font-weight: 600;
+  height: 25%;
+  align-self: center;
+  margin-right: 3%;
+  font-size: 14px;
 }
+
+.book-container {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2%;
+  font-size: 18px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #000;
+  filter: drop-shadow(2px 2px 1px #afafaf);
+  border-radius: 3px;
+}
+
+#add-btn {
+  position: relative;
+  right: 16%;
+  margin-right: 0;
+  background-color: #fff;
+  width: auto;
+  margin-top: 2%;
+  filter: drop-shadow(3px 2px 0 #000);
+}
+
+.hr-main {
+  margin-top: 7.5%;
+  border: 0;
+  height: 3px;
+  background-color: #000;
+  width: 33%;
+  border-radius: 2px;
+  filter: drop-shadow(3.3px 1px 0.75px #000)
+}
+
+.add-book {
+  font-family: 'Fredoka', sans-serif;
+  margin: auto;
+  font-weight: 600;
+}
+
+

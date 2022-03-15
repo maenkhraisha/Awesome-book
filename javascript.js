@@ -11,7 +11,6 @@ let elBookContainer;
 let elTitle;
 let elAuthor;
 let elRemoveBtn;
-let hirozantalLine;
 
 // === create elements === //
 function createElements() {
@@ -20,9 +19,7 @@ function createElements() {
   elTitle = document.createElement('p');
   elAuthor = document.createElement('p');
   elRemoveBtn = document.createElement('button');
-  elRemoveBtn.textContent = 'remove';
-  hirozantalLine = document.createElement('hr');
-  hirozantalLine.className = 'rounded';
+  elRemoveBtn.textContent = 'Remove';
 }
 
 // === append elements === //
@@ -33,7 +30,6 @@ function appendElements(book) {
   elAuthor.innerText = book.author;
   elBookContainer.appendChild(elAuthor);
   elBookContainer.appendChild(elRemoveBtn);
-  elBookContainer.appendChild(hirozantalLine);
 
   // === remove item from the list book === //
   elRemoveBtn.addEventListener('click', () => {
