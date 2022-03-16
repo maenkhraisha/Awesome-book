@@ -57,11 +57,18 @@ function createElements() {
   elRemoveBtn.textContent = 'Remove';
 }
 
+// === change row background color === //
+function rowBGColor(id){
+  if(id % 2 == 0)
+    elBookContainer.style.backgroundColor = "#b3b3b3";
+}
 // === append elements === //
 function appendElements(book) {
   elBookList.appendChild(elBookContainer);
+  rowBGColor(book.getId());
   
   elID.innerText = book.getId();
+  elID.hidden = true;
   elBookContainer.appendChild(elID);
   
   elTitle.innerText = `${book.getTitle()} by `;
