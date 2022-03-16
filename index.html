@@ -9,10 +9,33 @@
 </head>
 <body>
 
-    
+    <header class="navigation">
+        <nav class="navbar">
+            <img src="images/logo.png" alt="logo" class="logo">
+            <ul class="nav-list">
+                <li class="nav-link"><a href="#">Home</a></li>
+                <li class="nav-link"><a href="#">List</a></li>
+                <li class="nav-link"><a href="#">Add new</a></li>
+                <li class="nav-link"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <div class="home" id="Home">
+        <h1 class="desc-title"> Awesome Books </h1>
+            <h2> By Maen and Adrian </h2>
+                <div class="desc">
+                <p> 
+                 This is our take over the first project from 2nd module.
+                 We had to do a webpage that will store books locally.
+                 We implemented the add and remove function so you can always remove old books and add new ones.
+                 Awesome Books is an open, editable library catalog, building towards a web page for every book ever published.
+                 Just like Wikipedia, you can contribute new information or corrections to the catalog. You can browse by subjects, authors or lists members have created. If you love books, why not help build a library?   
+                </p>
+                </div>
+    </div>
 
-    <div id="container">
+    <div class="list vanish">
         <h1 class="title">Awesome Books</h1>
 
         <div class="book-list">
@@ -20,7 +43,10 @@
         </div>
 
         <hr class="hr-main">
-        <form class="book-form">
+    </div>
+
+    <div id="container">
+        <form class="book-form vanish">
             <p class="add-book-title"> Add a new book </p>
 
             <label for="title-input"></label>
@@ -34,6 +60,10 @@
         </form>
     </div>
 
+    <footer id="footer" class="copyright">
+        <img src="images/logo.png" alt="logo">
+        <p class="cc"> 2022 Awesome Books <br> All rights reserved </p>
+    </footer>
     <script src="/javascript.js"></script>
 </body>
 </html>
