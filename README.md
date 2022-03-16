@@ -5,16 +5,16 @@
 
 ![screenshot](/images/demo.png)
 
-Our challenge was to build a webpage that can store our favourite books using classes, arrays and so on. [Live Demo](). 😊
+Our challenge was to build a webpage that can store our favourite books using classes, arrays and so on.  😊
 
 ### Features implemented:
-* Add and Remove functions
-* 
+* Add and Remove book from the list
+
 
 ## Built With
 - HTML5
 - CSS3 (Flex and Media queries)
-- Bootstrap styling (A popular CSS Framework for developing responsive and mobile-first websites.)
+- Javascript
 - Lighthouse (An open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more).
 - Webhint (A customizable linting tool that helps you improve your site's accessibility, speed, cross-browser compatibility, and more by checking your code for best practices and common errors).
 - Stylelint (A mighty, modern linter that helps you avoid errors and enforce conventions in your styles).
