@@ -11,13 +11,13 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: fit-content;
   margin: auto;
   padding: 2%;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 9px;
   font-family: 'Fredoka', sans-serif;
   font-size: 24px;
+  
 }
 
 .book-form {
@@ -58,6 +58,7 @@ body {
   font-size: 18px;
   font-family: 'Fredoka', sans-serif;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .book-list {
@@ -85,7 +86,7 @@ body {
   background-color: #000;
   width: 33%;
   border-radius: 2px;
-  filter: drop-shadow(3.3px 1px 0.75px #000)
+  filter: drop-shadow(3.3px 1px 0.75px #000);
 }
 
 .add-book {
@@ -93,5 +94,3 @@ body {
   margin: auto;
   font-weight: 600;
 }
-
-
