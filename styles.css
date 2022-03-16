@@ -13,11 +13,12 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 2%;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 9px;
   font-family: 'Fredoka', sans-serif;
   font-size: 24px;
-  width: 80%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* book list container */
@@ -45,11 +46,12 @@ body {
   height: 25%;
   align-self: center;
   font-size: 14px;
-  width: 10%;
+  width: auto;
+  margin-right: 2%;
+  margin-left: auto;
 }
 
 .book-container p {
-  width: 40%;
   padding-left: 5px;
 }
 
