@@ -1,21 +1,23 @@
-/* eslint-disable */
 let bookArray = [];
 class BookClass {
-  constructor(id=(bookArray.length+1),title, author) {
+  constructor(id = (bookArray.length + 1), title, author) {
     this.id = id;
     this.title = title;
     this.author = author;
   }
-  Add(){
+
+  Add() {
     bookArray.push(this);
   }
-  Get(){
+
+  Get() {
     return this;
   }
 
-  getId(){
+  getId() {
     return this.id;
   }
+
   getTitle() {
     return this.title;
   }
@@ -23,14 +25,10 @@ class BookClass {
   getAuthor() {
     return this.author;
   }
-
-  Remove(id) {
-    bookArray = bookArray.filter((ele) => ele.id !== this.id);
-  }
 }
 
-function fromJson(b){
-  return new BookClass(b.id,b.title,b.author);    
+function fromJson(b) {
+  return new BookClass(b.id, b.title, b.author);
 }
 
 // === select the main containter of the book list === //
@@ -57,34 +55,28 @@ function createElements() {
   elRemoveBtn.textContent = 'Remove';
 }
 
-// === change row background color === //
-function rowBGColor(id){
-  if(id % 2 == 0)
-    elBookContainer.style.backgroundColor = "#b3b3b3";
-}
 // === append elements === //
 function appendElements(book) {
   elBookList.appendChild(elBookContainer);
-  rowBGColor(book.getId());
-  
+
   elID.innerText = book.getId();
   elID.hidden = true;
   elBookContainer.appendChild(elID);
-  
+
   elTitle.innerText = `${book.getTitle()} by `;
   elBookContainer.appendChild(elTitle);
 
   elAuthor.innerText = book.getAuthor();
   elBookContainer.appendChild(elAuthor);
-  
+
   elBookContainer.appendChild(elRemoveBtn);
 
-// === button to remove item from the list book === //
-elRemoveBtn.addEventListener('click', () => {
-  bookArray = bookArray.filter((ele) => ele.id !== book.getId());
-  localStorage.setItem('bookList', JSON.stringify(bookArray));
-  window.location.reload();
-});
+  // === button to remove item from the list book === //
+  elRemoveBtn.addEventListener('click', () => {
+    bookArray = bookArray.filter((ele) => ele.id !== book.getId());
+    localStorage.setItem('bookList', JSON.stringify(bookArray));
+    window.location.reload();
+  });
 }
 
 // === loop on book list object === //
@@ -100,28 +92,23 @@ function createBookList() {
   }
 }
 
+// === toggole change row background color === //
+function toggoleRowColor() {
+  const bookContainers = document.querySelectorAll('.book-container');
+  for (let i = 0; i < bookContainers.length; i += 1) {
+    if (i % 2 === 0) bookContainers[i].style.backgroundColor = 'lightgray';
+  }
+}
+
 // === add book to book list array and localstorage === //
 elAddBtn.addEventListener('click', () => {
-  const book = new BookClass(undefined ,elTitleInput.value, elAutorInput.value);
+  const book = new BookClass(undefined, elTitleInput.value, elAutorInput.value);
   book.Add(book);
   localStorage.setItem('bookList', JSON.stringify(bookArray));
 });
 
-// test code
-function addObj(){
-  let book = new BookClass('title test','author test');
-  book.Add();
-  localStorage.setItem('bookList', JSON.stringify(bookArray));
-}
-function restoreObj(){
-  bookArray = JSON.parse(localStorage.getItem('bookList'));
-  bookArray.forEach((b) => {
-    b = fromJson(b);
-    console.log(b.constructor.name);
- }); 
-}
-
 /* load page */
 window.addEventListener('load', () => {
   createBookList();
+  toggoleRowColor();
 });
