@@ -13,18 +13,18 @@
         <nav class="navbar">
             <img src="images/logo.png" alt="logo" class="logo">
             <ul class="nav-list">
-                <li class="nav-link"><a href="#">Home</a></li>
-                <li class="nav-link"><a href="#">List</a></li>
-                <li class="nav-link"><a href="#">Add new</a></li>
-                <li class="nav-link"><a href="#">Contact</a></li>
+                <li id="home" class="nav-link"><a href="#">Home</a></li>
+                <li id="list" class="nav-link"><a href="#">List</a></li>
+                <li id="add" class="nav-link"><a  href="#">Add new</a></li>
+                <li id="contact" class="nav-link"><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="home" id="Home">
+    <div class="home" id="home-box">
         <h1 class="desc-title"> Awesome Books </h1>
-            <h2> By Maen and Adrian </h2>
-                <div class="desc">
+        <h2> By Maen and Adrian </h2>
+            <div class="desc">
                 <p> 
                  This is our take over the first project from 2nd module.
                  We had to do a webpage that will store books locally.
@@ -32,10 +32,10 @@
                  Awesome Books is an open, editable library catalog, building towards a web page for every book ever published.
                  Just like Wikipedia, you can contribute new information or corrections to the catalog. You can browse by subjects, authors or lists members have created. If you love books, why not help build a library?   
                 </p>
-                </div>
+            </div>
     </div>
 
-    <div class="contact" id="contact">
+    <div class="contact" id="contact-box">
         <h1> Contact information </h1>
         <h2> Do you have any questions or just want to say "Hello"?<br> You can reach to us!</h2>
         <ul class="contact-list">
@@ -45,28 +45,21 @@
         </ul>
     </div>
 
-    <div class="list vanish">
+    <div class="list" id="list-box">
         <h1 class="title">Awesome Books</h1>
-
         <div class="book-list">
-
         </div>
-
         <hr class="hr-main">
     </div>
 
-    <div id="container">
-        <form class="book-form vanish">
+    <div  id="add-box">
+        <form class="book-form">
             <p class="add-book-title"> Add a new book </p>
-
             <label for="title-input"></label>
             <input type="text" id="title-input" placeholder="Title" class="book-title">
-
             <label for="author-input"></label>
             <input type="text" id="author-input" placeholder="Author" class="book-author">
-
             <input type="submit" value="Add" id="add-btn">
-
         </form>
     </div>
 
@@ -74,6 +67,8 @@
         <img src="images/logo.png" alt="logo">
         <p class="cc"> 2022 Awesome Books <br> All rights reserved </p>
     </footer>
+    
     <script src="/javascript.js"></script>
+    <script src="/single-page.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+import { navigate } from './single-page.js';
+
 let bookArray = [];
 class BookClass {
   constructor(id = (bookArray.length + 1), title, author) {
@@ -75,7 +77,8 @@ function appendElements(book) {
   elRemoveBtn.addEventListener('click', () => {
     bookArray = bookArray.filter((ele) => ele.id !== book.getId());
     localStorage.setItem('bookList', JSON.stringify(bookArray));
-    window.location.reload();
+    // window.location.reload();
+    navigate('list');
   });
 }
 
