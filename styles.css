@@ -114,7 +114,7 @@ body {
   padding: 2%;
   font-family: 'Fredoka', sans-serif;
   font-size: 24px;
-  width: auto;
+  width: 66%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -146,17 +146,21 @@ body {
 }
 
 .nav-list {
+  display: flex;
   align-items: center;
   margin-top: 8px;
   margin-bottom: 8px;
 }
 
 .nav-link {
-  border-right: 1px solid #000;
+  border-right: 3px solid #000;
   padding-left: 4px;
   padding-right: 4px;
+  cursor: pointer;
 }
-
+.nav-link:last-child{
+  border: none;
+}
 .nav-link a {
   color: #000;
   text-decoration: none;

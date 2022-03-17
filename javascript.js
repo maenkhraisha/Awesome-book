@@ -1,5 +1,4 @@
-import { navigate } from './single-page.js';
-
+/* eslint-disable */
 let bookArray = [];
 class BookClass {
   constructor(id = (bookArray.length + 1), title, author) {
@@ -77,8 +76,8 @@ function appendElements(book) {
   elRemoveBtn.addEventListener('click', () => {
     bookArray = bookArray.filter((ele) => ele.id !== book.getId());
     localStorage.setItem('bookList', JSON.stringify(bookArray));
-    // window.location.reload();
     navigate('list');
+    window.location.reload();
   });
 }
 
@@ -108,10 +107,76 @@ elAddBtn.addEventListener('click', () => {
   const book = new BookClass(undefined, elTitleInput.value, elAutorInput.value);
   book.Add(book);
   localStorage.setItem('bookList', JSON.stringify(bookArray));
+  showList();
 });
 
-/* load page */
-window.addEventListener('load', () => {
+function showList(){
   createBookList();
   toggoleRowColor();
+  navigate('list');
+}
+/* load page */
+window.addEventListener('load', () => {
+  showList();
 });
+
+// =============================== //
+// ====== single page code ======= // 
+// =============================== //
+// === get the tool bar button === //
+const homeBtn = document.getElementById('navbtn-home');
+const listBtn = document.getElementById('navbtn-list');
+const addBtn = document.getElementById('navbtn-add');
+const contactBtn = document.getElementById('navbtn-contact');
+//= ================================//
+// === get the boxes container === //
+const boxHome = document.getElementById('home-box');
+const boxContact = document.getElementById('contact-box');
+const boxList = document.getElementById('list-box');
+const boxAdd = document.getElementById('add-box');
+//= ================================//
+
+function navigate(key) {
+  switch (key) {
+    case 'home':
+      boxHome.style.display = 'flex';
+      boxContact.style.display = 'none';
+      boxList.style.display = 'none';
+      boxAdd.style.display = 'none';
+      break;
+    case 'list':
+      boxHome.style.display = 'none';
+      boxContact.style.display = 'none';
+      boxList.style.display = 'flex';
+      boxAdd.style.display = 'none';
+      break;
+    case 'add':
+      boxHome.style.display = 'none';
+      boxContact.style.display = 'none';
+      boxList.style.display = 'none';
+      boxAdd.style.display = 'block';
+      break;
+    case 'contact':
+      boxHome.style.display = 'none';
+      boxContact.style.display = 'flex';
+      boxList.style.display = 'none';
+      boxAdd.style.display = 'none';
+      break;
+    default:
+      break;
+  }
+}
+// === the action on button === //
+homeBtn.addEventListener('click', () => {
+  navigate('home');
+});
+listBtn.addEventListener('click', () => {
+  navigate('list');
+});
+addBtn.addEventListener('click', () => {
+  navigate('add');
+});
+contactBtn.addEventListener('click', () => {
+  navigate('contact');
+});
+
