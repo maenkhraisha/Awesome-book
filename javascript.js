@@ -44,6 +44,18 @@ let elTitle;
 let elAuthor;
 let elRemoveBtn;
 
+// === get the tool bar button === //
+const homeBtn = document.getElementById('navbtn-home');
+const listBtn = document.getElementById('navbtn-list');
+const addBtn = document.getElementById('navbtn-add');
+const contactBtn = document.getElementById('navbtn-contact');
+
+// === get the boxes container === //
+const boxHome = document.getElementById('home-box');
+const boxContact = document.getElementById('contact-box');
+const boxList = document.getElementById('list-box');
+const boxAdd = document.getElementById('add-box');
+
 // === create elements === //
 function createElements() {
   elBookContainer = document.createElement('div');
@@ -75,7 +87,7 @@ function appendElements(book) {
   elRemoveBtn.addEventListener('click', () => {
     bookArray = bookArray.filter((ele) => ele.id !== book.getId());
     localStorage.setItem('bookList', JSON.stringify(bookArray));
-    window.location.reload();
+    listBtn.click();
   });
 }
 
@@ -91,7 +103,12 @@ function createBookList() {
     });
   }
 }
-
+// === remove all child nodes === //
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
 // === toggole change row background color === //
 function toggoleRowColor() {
   const bookContainers = document.querySelectorAll('.book-container');
@@ -99,16 +116,48 @@ function toggoleRowColor() {
     if (i % 2 === 0) bookContainers[i].style.backgroundColor = 'lightgray';
   }
 }
+function showList() {
+  removeAllChildNodes(elBookList);
+  createBookList();
+  toggoleRowColor();
+}
+
+// === the action on button === //
+homeBtn.addEventListener('click', () => {
+  boxHome.style.display = 'flex';
+  boxContact.style.display = 'none';
+  boxList.style.display = 'none';
+  boxAdd.style.display = 'none';
+});
+listBtn.addEventListener('click', () => {
+  showList();
+  boxHome.style.display = 'none';
+  boxContact.style.display = 'none';
+  boxList.style.display = 'flex';
+  boxAdd.style.display = 'none';
+});
+addBtn.addEventListener('click', () => {
+  boxHome.style.display = 'none';
+  boxContact.style.display = 'none';
+  boxList.style.display = 'none';
+  boxAdd.style.display = 'block';
+});
+contactBtn.addEventListener('click', () => {
+  boxHome.style.display = 'none';
+  boxContact.style.display = 'flex';
+  boxList.style.display = 'none';
+  boxAdd.style.display = 'none';
+});
 
 // === add book to book list array and localstorage === //
 elAddBtn.addEventListener('click', () => {
   const book = new BookClass(undefined, elTitleInput.value, elAutorInput.value);
   book.Add(book);
   localStorage.setItem('bookList', JSON.stringify(bookArray));
+  listBtn.click();
 });
 
 /* load page */
 window.addEventListener('load', () => {
-  createBookList();
-  toggoleRowColor();
+  homeBtn.click();
 });
