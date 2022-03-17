@@ -7,7 +7,7 @@ body {
 }
 
 .hide {
-  display: none!important;
+  display: none !important;
 }
 
 /* the main container */
@@ -32,7 +32,7 @@ body {
   border-radius: 3px;
   width: 100%;
   height: 50vh;
-  overflow:  hidden;
+  overflow: hidden;
 }
 
 .book-container {
@@ -158,9 +158,11 @@ body {
   padding-right: 4px;
   cursor: pointer;
 }
-.nav-link:last-child{
+
+.nav-link:last-child {
   border: none;
 }
+
 .nav-link a {
   color: #000;
   text-decoration: none;
